@@ -1,0 +1,447 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>For you Mahal ko 🌹</title>
+<link href="https://fonts.googleapis.com/css2?family=Allura&family=Caveat:wght@600&family=Comic+Neue:wght@700&family=Fuzzy+Bubbles:wght@700&family=Montserrat:ital,wght@0,400;1,400&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#4a0612;--env:#800f11;--cream:#4a0612;--tulip:#d24842;--wrap:#e3d2b6;--strip:#831417;--gold:#c9a24b}
+*{box-sizing:border-box;margin:0}
+html,body{height:100%;overflow:hidden;background:#000;font-family:'Montserrat',sans-serif;color:#fff}
+.scene{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;background:var(--bg);opacity:0;pointer-events:none;transition:opacity .9s;overflow:hidden}
+.scene.on{opacity:1;pointer-events:auto}
+.script{font-family:'Allura','Brush Script MT',cursive}
+.hand{font-family:'Fuzzy Bubbles','Comic Sans MS',cursive;text-transform:uppercase;letter-spacing:.05em}
+.comic{font-family:'Comic Neue','Comic Sans MS',cursive}
+svg.fl{position:absolute;pointer-events:none;filter:drop-shadow(0 6px 8px #0007);transform-origin:50% 100%;animation:sway 6s ease-in-out infinite}
+@keyframes sway{50%{transform:rotate(3deg)}}
+.ph{background-size:cover,60px;background-position:center;background-repeat:no-repeat;background-color:#e9d9d5}
+/* scene 0: envelope */
+#s0{background:#fff;flex-direction:column;gap:2rem;color:#510000}
+#s0 h1{font-size:clamp(2.4rem,8vw,4rem);font-weight:400}
+.env{position:relative;width:min(80vw,340px);aspect-ratio:3/2;cursor:pointer;perspective:900px;animation:float 3s ease-in-out infinite}
+@keyframes float{50%{transform:translateY(-8px)}}
+.env .back{position:absolute;inset:0;background:#6b0a0d;border-radius:4px}
+.env .paper{position:absolute;left:8%;right:8%;top:6%;bottom:6%;background:#fff;border-radius:3px;box-shadow:0 2px 6px #0004;transition:transform 1s .5s;display:flex;align-items:center;justify-content:center;font-size:2rem}
+.env .front{position:absolute;inset:0;background:var(--env);clip-path:polygon(0 0,50% 55%,100% 0,100% 100%,0 100%);border-radius:4px}
+.env .flap{position:absolute;left:0;right:0;top:0;height:55%;background:#8f1215;clip-path:polygon(0 0,100% 0,50% 100%);transform-origin:top;transition:transform .8s,z-index 0s .4s;z-index:3}
+.env .seal{position:absolute;left:50%;top:50%;width:18%;aspect-ratio:1;margin:-9% 0 0 -9%;border-radius:50%;background:radial-gradient(circle at 35% 30%,#e9c971,var(--gold) 60%,#8a6a22);z-index:4;box-shadow:0 2px 5px #0006;transition:opacity .4s}
+.env.open{animation:none}.env.open .flap{transform:rotateX(180deg);z-index:0}.env.open .seal{opacity:0}.env.open .paper{transform:translateY(-70%)}
+#s0 small{font-size:.8rem;opacity:.7;letter-spacing:.05em}
+/* scene 1 */
+#s1{background:radial-gradient(circle at 50% 40%,#7a0a0e,#2a0000 80%);flex-direction:column;text-align:center}
+#s1 .h{font-size:clamp(3.5rem,14vw,8rem);line-height:1}
+#s1 .n{font-size:clamp(4.5rem,18vw,11rem);line-height:.9;color:#ffd7d7;text-shadow:0 0 30px #ff4d5a88}
+#s1 .d{margin-top:1rem;letter-spacing:.4em;opacity:.8}
+/* scene 2 */
+.paper-card{position:relative;width:min(88vw,560px);background:#fff;color:#4a1d22;padding:clamp(1.2rem,4vw,2.2rem);transform:rotate(-3deg);box-shadow:8px 10px 0 -2px #ddd,0 18px 40px #0009;text-align:center}
+.paper-card h2{font-size:clamp(2.2rem,8vw,3.4rem);font-weight:400;color:#510000;margin-bottom:.6rem}
+.paper-card p{font-style:italic;font-size:clamp(.72rem,2.4vw,.92rem);line-height:1.7;margin-bottom:.8rem;text-align:left}
+/* scene 3 */
+#s3{flex-direction:column;gap:1rem}
+.f3{position:relative;width:min(96vw,900px);height:min(62vh,460px)}
+.f3 .t{position:absolute;width:min(30%,230px);text-align:center;font-size:clamp(.8rem,2.3vw,1.15rem);line-height:1.3}
+.bq{position:absolute;left:50%;top:0;height:100%;transform:translateX(-50%);overflow:visible}
+.bq .tu{transform-origin:50% 100%;animation:bloom 1.6s both;transform-box:fill-box}
+.on .bq .tu{animation:bloom 1.6s both}
+@keyframes bloom{from{transform:scale(0) translateY(20px)}to{transform:none}}
+#s3 h2{font-size:clamp(1.6rem,5vw,2.4rem)}
+/* scene 4 */
+#s4{background:var(--cream);color:#fff;gap:3vw;padding:5vw;flex-wrap:wrap}
+.pol{position:relative;background:#fff;padding:10px 10px 38px;box-shadow:4px 8px 18px #0004;transform:rotate(-4deg)}
+.pol .ph{width:min(60vw,240px);aspect-ratio:3/4}
+.pol .c{position:absolute;top:-1.2rem;left:-.5rem;font-family:'Caveat',cursive;font-size:2rem;color:#9c3d3d;transform:rotate(-6deg)}
+.pol .cap{position:absolute;bottom:8px;left:0;right:0;text-align:center;font-family:'Caveat',cursive;font-size:1.2rem}
+#s4 .tx{max-width:520px;font-style:italic;font-size:clamp(.78rem,2.4vw,1rem);line-height:1.75;text-align:center}
+#s4 .st{position:absolute;color:#b03a3a;animation:tw 3s ease-in-out infinite}
+@keyframes tw{50%{transform:scale(1.3) rotate(20deg);opacity:.6}}
+/* scene 5 */
+#s5{gap:3vw;padding:4vw}
+.vinyl{position:absolute;left:3vw;top:50%;width:min(28vw,220px);aspect-ratio:1;margin-top:calc(min(28vw,220px)/-2);border-radius:50%;background:radial-gradient(circle,#7a0f13 0 16%,#111 17% 19%,#1c1c1c 20% 38%,#0d0d0d 39% 40%,#222 41% 70%,#0b0b0b 71%);animation:spin 8s linear infinite;box-shadow:0 0 30px #0008}
+@keyframes spin{to{transform:rotate(360deg)}}
+.song{position:relative;z-index:2;text-align:center;max-width:340px}
+.song h2{font-size:clamp(1.3rem,4.5vw,2rem);line-height:1.2;margin-bottom:1rem}
+.yt{display:block;background:#0009;border-radius:10px;padding:.9rem 1rem;color:#fff;text-decoration:none;font-size:.85rem;border:1px solid #fff3}
+.yt b{display:block;font-size:1rem}.yt:hover{background:#000c}
+.song p{font-style:italic;font-size:.72rem;line-height:1.6;margin-top:.8rem;opacity:.9}
+
+.strips {
+  display: flex;
+  gap: 18px;
+  z-index: 2;
+  justify-content: center;
+  align-items: center;
+}
+
+.strip {
+  background: var(--strip);
+  padding: 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  border-radius: 5px;
+  box-shadow: 0 8px 20px #0007;
+}
+
+.strip .ph {
+  width: min(25vw, 145px);
+  aspect-ratio: 3/4;
+}
+
+.strip:nth-child(2) {
+  margin-top: 40px;
+}
+
+@media(max-width:640px) {
+  #s5 {
+    flex-direction: column;
+  }
+
+  .strips {
+    flex-direction: row;
+    gap: 12px;
+  }
+
+  .strip .ph {
+    width: min(38vw, 135px);
+  }
+
+  .strip:nth-child(2) {
+    margin-top: 25px;
+  }
+}
+
+/* scene 6 */
+#s6{flex-direction:column;gap:2.2rem}
+.row{display:flex;gap:min(2vw,14px);padding:0 3vw}
+.row .pol{padding:6px 6px 26px}.row .pol .ph{width:min(21vw,170px)}
+.row .pol:nth-child(odd){transform:rotate(-5deg)}.row .pol:nth-child(even){transform:rotate(4deg) translateY(10px)}
+#s6 .ty{font-size:clamp(2.4rem,9vw,4.5rem)}
+
+#s6 {
+  gap: 1.5rem;
+  padding: 2rem 1rem 5rem;
+}
+
+#s6 .ending-message {
+  width: min(88vw, 950px);
+  margin: 0 auto;
+  text-align: center;
+  font-size: clamp(0.7rem, 0.9vw, 0.82rem);
+  line-height: 1.8;
+  color: #f8e9e9;
+  font-weight: 400;
+}
+
+#s6 .ending-message strong {
+  display: inline-block;
+  margin-top: 12px;
+  color: #ffd6d6;
+}
+
+#s6 .ending-message em {
+  font-family: 'Allura', cursive;
+  font-size: 1.8rem;
+}
+
+#s6 .ending-message {
+  width: min(88vw, 950px);
+  margin: 0 auto;
+  text-align: center;
+  font-size: clamp(0.7rem, 0.9vw, 0.82rem);
+  line-height: 1.8;
+  color: #f8e9e9;
+  font-weight: 400;
+  font-style: italic;
+}
+
+#s6 .ending-message strong {
+  display: inline-block;
+  margin-top: 12px;
+  color: #ffd6d6;
+  font-style: italic;
+}
+
+.yt {
+  display: block;
+  width: 100%;
+  cursor: pointer;
+  background: #0009;
+  border-radius: 10px;
+  padding: .9rem 1rem;
+  color: #fff;
+  font-size: .85rem;
+  border: 1px solid #fff3;
+  font-family: inherit;
+}
+
+.yt b {
+  display: block;
+  font-size: 1rem;
+}
+
+.yt:hover {
+  background: #000c;
+}
+
+.song-player {
+  width: 100%;
+  margin-top: 15px;
+  aspect-ratio: 16 / 9;
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.song-player iframe {
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+
+.song-player[hidden] {
+  display: none;
+}
+
+/* Decorative flowers in Favorite Person section */
+#s4 .flower-top-left {
+  top: 3vh;
+  left: 2vw;
+  width: 120px;
+  z-index: 0;
+}
+
+#s4 .flower-bottom-right {
+  bottom: 3vh;
+  right: 2vw;
+  width: 120px;
+  z-index: 0;
+}
+
+#s4 .pol,
+#s4 .tx {
+  position: relative;
+  z-index: 1;
+}
+
+@media(max-width:640px) {
+  #s4 .flower-top-left,
+  #s4 .flower-bottom-right {
+    width: 85px;
+    opacity: .8;
+  }
+}
+/* nav */
+.nav{position:fixed;bottom:14px;left:0;right:0;display:flex;justify-content:center;align-items:center;gap:14px;z-index:20}
+.nav button{background:#0006;color:#fff;border:1px solid #fff5;width:40px;height:40px;border-radius:50%;font-size:1.1rem;cursor:pointer;backdrop-filter:blur(4px)}
+.nav button:hover{background:#000a}
+.dots{display:flex;gap:7px}.dots i{width:8px;height:8px;border-radius:50%;background:#fff5;transition:.3s;border:1px solid #0004}.dots i.on{background:#ff6b73;transform:scale(1.3)}
+.hint{position:fixed;bottom:60px;left:0;right:0;text-align:center;font-size:.75rem;letter-spacing:.15em;opacity:.7;z-index:20;pointer-events:none;animation:tw2 2s ease-in-out infinite}@keyframes tw2{50%{opacity:.25}}
+body{cursor:pointer}
+.petal{position:fixed;top:-30px;z-index:10;pointer-events:none;width:14px;height:18px;background:linear-gradient(135deg,#a3161d,#5c0509);border-radius:100% 0 100% 0;opacity:.75;animation:fall linear infinite}
+@keyframes fall{to{transform:translate(var(--dx),110vh) rotate(720deg)}}
+</style>
+</head>
+<body>
+
+<!-- Reusable flower drawings -->
+<svg width="0" height="0" style="position:absolute"><defs>
+ <radialGradient id="pg" cx="50%" cy="100%" r="100%"><stop offset="0" stop-color="#2b0306"/><stop offset=".55" stop-color="#661d1f"/><stop offset="1" stop-color="#a42a2e"/></radialGradient>
+ <linearGradient id="tg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#ea6a7c"/><stop offset="1" stop-color="#a8324a"/></linearGradient>
+ <linearGradient id="lf" x1="0" y1="1" x2="0" y2="0"><stop offset="0" stop-color="#5f7048"/><stop offset="1" stop-color="#8ea06a"/></linearGradient>
+ <g id="pet"><path d="M100 100C68 72 74 22 100 4c26 18 32 68 0 96z" fill="url(#pg)"/><path d="M100 98V20M100 90c-12-20-14-40-10-58M100 90c12-20 14-40 10-58" stroke="#1d0204" stroke-width="1.6" fill="none" opacity=".55"/></g>
+ <symbol id="lily" viewBox="0 0 200 200">
+  <use href="#pet" transform="rotate(30 100 100)"/><use href="#pet" transform="rotate(150 100 100)"/><use href="#pet" transform="rotate(270 100 100)"/>
+  <use href="#pet" transform="rotate(-30 100 100) scale(.92)" transform-origin="100 100"/><use href="#pet" transform="rotate(90 100 100) scale(.92)" transform-origin="100 100"/><use href="#pet" transform="rotate(210 100 100) scale(.92)" transform-origin="100 100"/>
+  <g stroke="#e6b45a" stroke-width="1.6"><path d="M100 100L100 58M100 100L134 72M100 100L138 112M100 100L70 132M100 100L62 100M100 100L70 68"/></g>
+  <g fill="#c8782a"><circle cx="100" cy="56" r="4"/><circle cx="135" cy="71" r="4"/><circle cx="139" cy="113" r="4"/><circle cx="69" cy="133" r="4"/><circle cx="61" cy="100" r="4"/><circle cx="69" cy="67" r="4"/></g>
+  <circle cx="100" cy="100" r="6" fill="#d9b24c"/>
+ </symbol>
+ <symbol id="tulip" viewBox="0 0 60 80"><path d="M30 78C4 62 0 26 7 6c9 14 15 12 23-2 8 14 14 16 23 2 7 20 3 56-23 72z" fill="url(#tg)"/><path d="M30 78C20 50 22 24 30 4M30 78c10-28 8-54 0-74" stroke="#7d2024" stroke-width="1" fill="none" opacity=".5"/></symbol>
+ <path id="leaf" d="M0 0C-14-40-10-90 0-130 14-90 12-40 0 0z" fill="url(#lf)"/>
+</defs></svg>
+
+<!-- 0 · Envelope -->
+<section class="scene on" id="s0">
+ <h1 class="script">You got a mail!</h1>
+ <div class="env" id="env"><div class="back"></div><div class="paper">💌</div><div class="front"></div><div class="flap"></div><div class="seal"></div></div>
+ <small>Tap on the envelope to open</small>
+</section>
+
+<!-- 1 · Hello -->
+<section class="scene" id="s1">
+ <svg class="fl" style="left:-40px;bottom:-30px;width:min(55vw,300px)"><use href="#lily"/></svg>
+ <svg class="fl" style="right:-40px;top:-30px;width:min(50vw,270px);transform:rotate(180deg)"><use href="#lily"/></svg>
+ <div class="h script">Happy Birthday</div>
+ <div class="n script">Baba</div>
+ <div class="d">11 · 14 · 26</div>
+</section>
+
+<!-- 2 · Letter -->
+<section class="scene" id="s2">
+ <svg class="fl" style="left:-30px;top:-20px;width:min(34vw,230px)"><use href="#lily"/></svg>
+ <svg class="fl" style="right:-30px;bottom:-10px;width:min(40vw,260px)"><use href="#lily"/></svg>
+ <div class="paper-card">
+  <h2 class="script">A letter for you</h2>
+  <p>Happy Birthday, Mahal ko! ❤️ Today, the world became a little brighter because someone as special as you was born. I'm so lucky na ikaw yung taong nagbibigay kulay sa araw ko and makes even the simplest moments feel special.</p>
+  <p>Thank you for being my comfort, my safe place, and the person I always look forward to talking to at the end of the day. You make me laugh even on my hardest days, and you inspire me to become a better person without even asking me to. I hope this month will be gentle with you and bring you all the happiness, love, and blessings that you truly deserve. Sana matupad lahat ng wishes and dreams mo, because you deserve nothing but the best.</p>
+  <p>I love you so much, Mahal ko. No matter what happens, I'll keep choosing you, today, tomorrow, and every day after this. Always remember na nandito lang ako, cheering for you and loving you through every season of life. Happy Birthday! 🤍</p>
+ </div>
+</section>
+
+<!-- 3 · Flowers for you -->
+<section class="scene" id="s3">
+ <svg class="fl" style="left:0;top:0;width:min(26vw,170px)"><use href="#lily"/></svg>
+ <svg class="fl" style="right:0;bottom:0;width:min(24vw,160px)"><use href="#lily"/></svg>
+ <div class="f3 comic">
+  <div class="t" style="left:4%;top:22%">I love you because you always know how to make me smile even on my hardest days.</div>
+  <div class="t" style="left:12%;top:60%">I love you because your love makes me feel safe, valued, and appreciated.</div>
+  <svg class="bq" viewBox="0 0 240 330" width="240" height="330">
+   <g transform="translate(120 170)"><use href="#leaf" transform="rotate(-48)"/><use href="#leaf" transform="rotate(46)"/><use href="#leaf" transform="rotate(-22) scale(.9)"/><use href="#leaf" transform="rotate(24) scale(.9)"/></g>
+   <path d="M62 150L178 150L138 318L102 318Z" fill="var(--wrap)" opacity=".92"/><path d="M82 150L120 318L156 150Z" fill="#fff" opacity=".3"/>
+   <g class="tu"><use href="#tulip" x="92" y="10" width="56" height="74"/></g>
+   <g class="tu" style="animation-delay:.2s"><use href="#tulip" x="42" y="42" width="52" height="68" transform="rotate(-14 68 110)"/></g>
+   <g class="tu" style="animation-delay:.4s"><use href="#tulip" x="146" y="42" width="52" height="68" transform="rotate(14 172 110)"/></g>
+   <g class="tu" style="animation-delay:.6s"><use href="#tulip" x="70" y="76" width="50" height="66" transform="rotate(-6 95 140)"/></g>
+   <g class="tu" style="animation-delay:.8s"><use href="#tulip" x="122" y="78" width="50" height="66" transform="rotate(8 147 140)"/></g>
+   <path d="M120 232c-24-14-34 2-14 10 8 3 14-4 14-10zM120 232c24-14 34 2 14 10-8 3-14-4-14-10z" fill="none" stroke="#7a5a36" stroke-width="3"/>
+  </svg>
+  <div class="t" style="right:6%;top:14%">I love you because you stay patient and understanding with me.</div>
+  <div class="t" style="right:2%;top:50%">I love you because being with you makes my heart the happiest it has ever been.</div>
+ </div>
+ <h2 class="hand">Flowers for you, Mahal!</h2>
+</section>
+
+<!-- 4 · Favorite person -->
+<section class="scene" id="s4">
+  <!-- Decorative flowers -->
+<svg class="fl flower-top-left">
+  <use href="#lily"/>
+</svg>
+
+<svg class="fl flower-bottom-right">
+  <use href="#lily"/>
+</svg>
+ <div class="pol"><span class="c">My favorite person ↘</span><div class="ph" data-photo="0"></div></div>
+ <p class="tx">I love you because you came into my life and made everything feel lighter and happier. Even in the simplest moments, you make me feel loved in ways words can barely explain. I love how you make me laugh, how you turn my bad days into better ones, and how your presence alone can bring me so much comfort. Sometimes, I find myself smiling just by thinking about you, and I hope you know how special that makes you to me.<br><br>Being loved by you is one of the best feelings I've ever experienced. I appreciate every little thing about you, even the things you might not notice about yourself. You are not just someone I love, you are someone I genuinely treasure, someone I want to make more memories with, grow alongside, and keep choosing every single day. I'm so grateful that you came into my life, and I hope I get to make you feel as loved and appreciated as you make me feel. 🤍</p>
+</section>
+
+<!-- 5 · Song -->
+<section class="scene" id="s5">
+ <div class="vinyl"></div>
+ <svg class="fl" style="left:18vw;bottom:6vh;width:min(26vw,150px)"><use href="#lily"/></svg>
+ <div class="song">
+  <h2 class="hand">Song that reminds me of you</h2>
+  <button class="yt" id="yt" type="button">
+  <b>▶ Palagi</b>
+  TJ Monterde · tap to play
+</button>
+
+<div id="song-player" class="song-player" hidden>
+  <iframe
+    id="song-video"
+    src=""
+    title="Palagi - TJ Monterde"
+    allow="autoplay; encrypted-media; picture-in-picture"
+    allowfullscreen>
+  </iframe>
+</div>
+  <p>“Palagi” reminds me of you because no matter how ordinary or difficult life gets, ikaw pa rin ang pipiliin ko. You're my favorite person, my comfort, and the one I want beside me through every season of life. ❤️</p>
+ </div>
+ <div class="strips">
+  <div class="strip"><div class="ph" data-photo="1"></div><div class="ph" data-photo="2"></div><div class="ph" data-photo="3"></div></div>
+  <div class="strip"><div class="ph" data-photo="4"></div><div class="ph" data-photo="5"></div><div class="ph" data-photo="6"></div></div>
+ </div>
+</section>
+
+
+<!-- 6 · Thank you -->
+<section class="scene" id="s6">
+
+  <div class="row">
+    <div class="pol"><div class="ph" data-photo="7"></div></div>
+    <div class="pol"><div class="ph" data-photo="8"></div></div>
+    <div class="pol"><div class="ph" data-photo="9"></div></div>
+    <div class="pol"><div class="ph" data-photo="10"></div></div>
+  </div>
+
+  <div class="ty script">
+    Happy Birthday, Mahal ko 🌹
+  </div>
+
+  <p class="ending-message">
+    So, as you celebrate another year of your life, I hope you always remember that you have someone who will continue to admire you, support you, and love you through every version of yourself.
+
+    No matter where life takes us, I hope we never stop finding reasons to laugh together, creating little memories, and choosing each other every day. I may not always have the perfect words to express how much you mean to me, but I hope my love will always make you feel how special you are.
+
+    Happy Birthday once again, my love. Here's to more birthdays, more memories, more laughter, and more years of loving you. If I had to choose all over again, it would still be you, in every lifetime and in every version of my story.
+
+    <br><br>
+    <strong>With all my love,</strong>
+    <br>
+    <em>Your Padaba, always. 💗</em>
+  </p>
+
+</section>
+
+
+<div class="hint" id="hint">TAP ANYWHERE TO CONTINUE</div>
+<div class="nav"><button id="prev" aria-label="Previous">‹</button><div class="dots" id="dots"></div><button id="next" aria-label="Next">›</button></div>
+
+<script>
+/* ===== EDIT ME ===== */
+const PHOTOS = [   // put your pictures in a "photos" folder next to this file (leave '' to show a placeholder)
+  'photos/1.jpg','photos/2.jpg','photos/3.jpg','photos/4.jpg','photos/5.jpg','photos/6.jpg',
+  'photos/7.jpg','photos/8.jpg','photos/9.jpg','photos/10.jpg','photos/11.jpg'
+];
+const songButton = document.getElementById('yt');
+const songPlayer = document.getElementById('song-player');
+const songVideo = document.getElementById('song-video');
+
+songButton.addEventListener('click', () => {
+  songPlayer.hidden = false;
+
+  songVideo.src =
+    'https://www.youtube.com/embed/v82VtUUGFqk?autoplay=1&playsinline=1';
+
+  songButton.innerHTML = '<b>♥ Now Playing</b> Palagi · TJ Monterde';
+}); // paste the exact video link here
+/* =================== */
+
+const heart = "url(\"data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='%23c9777b' d='M12 21s-8-5.2-8-11a4.5 4.5 0 0 1 8-2.8A4.5 4.5 0 0 1 20 10c0 5.800-8 11-8 11z'/%3E%3C/svg%3E\")";
+document.querySelectorAll('[data-photo]').forEach(el=>{
+  const p = PHOTOS[+el.dataset.photo];
+  el.style.backgroundImage = (p ? `url("${p}"),` : '') + heart;
+});
+
+
+const scenes=[...document.querySelectorAll('.scene')], dots=document.getElementById('dots');
+scenes.forEach(()=>dots.appendChild(document.createElement('i')));
+let cur=0, opened=false;
+function show(i){
+  if(i<0||i>=scenes.length||(cur===0&&!opened&&i>0)) return;
+  scenes[cur].classList.remove('on'); cur=i; scenes[cur].classList.add('on');
+  [...dots.children].forEach((d,k)=>d.classList.toggle('on',k===cur));
+  document.getElementById('hint').style.display=(cur===0||cur===scenes.length-1)?'none':'block';
+  if(cur===3){const b=document.querySelector('.bq');b.replaceWith(b.cloneNode(true));} // replay bloom
+}
+show(0);
+const env=document.getElementById('env');
+env.onclick=()=>{ if(opened) return; opened=true; env.classList.add('open'); setTimeout(()=>show(1),2200); };
+document.getElementById('next').onclick=()=>show(cur+1);
+document.getElementById('prev').onclick=()=>show(cur-1);
+addEventListener('click',e=>{ if(e.target.closest('a,button,.env')) return; if(cur===0) return; show(cur+1); });
+addEventListener('keydown',e=>{ if(e.key==='ArrowRight') show(cur+1); if(e.key==='ArrowLeft') show(cur-1); if((e.key==='Enter'||e.key===' ')&&cur===0) env.click(); });
+let x0=null; addEventListener('touchstart',e=>x0=e.touches[0].clientX);
+addEventListener('touchend',e=>{ if(x0===null) return; const d=e.changedTouches[0].clientX-x0; if(Math.abs(d)>50) show(cur+(d<0?1:-1)); x0=null; });
+
+// falling petals
+for(let i=0;i<16;i++){
+  const p=document.createElement('div'); p.className='petal';
+  p.style.left=Math.random()*100+'vw'; p.style.setProperty('--dx',(Math.random()*160-80)+'px');
+  p.style.animationDuration=(9+Math.random()*9)+'s'; p.style.animationDelay=(-Math.random()*14)+'s';
+  p.style.transform=`scale(${.6+Math.random()*.8})`; document.body.appendChild(p);
+}
+</script>
+</body>
+</html>
